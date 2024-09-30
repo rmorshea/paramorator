@@ -1,0 +1,17 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "paramorator"
+authors = [{ name = "Ryan Morshead", email = "ryan.morshead@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+readme = "README.md"
+
+[metadata]
+dev-requires = ["pyright"]
+
+[project.urls]
+Home = "https://pypi.org/project/paramorator"
