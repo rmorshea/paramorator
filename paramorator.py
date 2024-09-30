@@ -32,7 +32,7 @@ if TYPE_CHECKING:
         ) -> Callable[[C_contra], D_co] | D_co: ...
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 def paramorator(deco: Callable[Concatenate[C, P], D]) -> Decorator[C, P, D]:
