@@ -10,11 +10,11 @@ if TYPE_CHECKING:
 
     C_contra = TypeVar("C_contra", bound=Callable, contravariant=True)
     C = TypeVar("C", bound=Callable)
-    D_co = TypeVar("D_co", bound=Callable, covariant=True)
-    D = TypeVar("D", bound=Callable)
+    D_co = TypeVar("D_co", covariant=True)
+    D = TypeVar("D")
     P = ParamSpec("P")
 
-    class Decorator(Protocol[C_contra, P, D_co]):
+    class Paramorator(Protocol[C_contra, P, D_co]):
         """An optionally parameterized decorator protocol."""
 
         @overload
@@ -32,10 +32,10 @@ if TYPE_CHECKING:
         ) -> Callable[[C_contra], D_co] | D_co: ...
 
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 
-def paramorator(deco: Callable[Concatenate[C, P], D]) -> Decorator[C, P, D]:
+def paramorator(deco: Callable[Concatenate[C, P], D]) -> Paramorator[C, P, D]:
     """A decorator for defining type-checked decorators with parameters.
 
     ```python
